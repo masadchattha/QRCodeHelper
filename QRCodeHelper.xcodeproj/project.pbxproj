@@ -56,15 +56,55 @@
 		DCCAA33D2B24DF8200706122 /* QRCodeHelper */ = {
 			isa = PBXGroup;
 			children = (
-				DCCAA33E2B24DF8200706122 /* AppDelegate.swift */,
-				DCCAA3402B24DF8200706122 /* SceneDelegate.swift */,
-				DCCAA3422B24DF8200706122 /* ViewController.swift */,
-				DCCAA3442B24DF8200706122 /* Main.storyboard */,
-				DCCAA3472B24DF8500706122 /* Assets.xcassets */,
-				DCCAA3492B24DF8500706122 /* LaunchScreen.storyboard */,
+				DCCAA3522B24E61E00706122 /* App */,
+				DCCAA3552B24E65200706122 /* Assets */,
+				DCCAA3562B24E66300706122 /* Model */,
+				DCCAA3532B24E63000706122 /* Controllers */,
+				DCCAA3542B24E64200706122 /* Views */,
 				DCCAA34C2B24DF8500706122 /* Info.plist */,
 			);
 			path = QRCodeHelper;
+			sourceTree = "<group>";
+		};
+		DCCAA3522B24E61E00706122 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DCCAA33E2B24DF8200706122 /* AppDelegate.swift */,
+				DCCAA3402B24DF8200706122 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DCCAA3532B24E63000706122 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DCCAA3422B24DF8200706122 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DCCAA3542B24E64200706122 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCCAA3442B24DF8200706122 /* Main.storyboard */,
+				DCCAA3492B24DF8500706122 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DCCAA3552B24E65200706122 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DCCAA3472B24DF8500706122 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		DCCAA3562B24E66300706122 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
