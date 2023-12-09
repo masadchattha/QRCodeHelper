@@ -13,6 +13,7 @@
 		DCCAA3462B24DF8200706122 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCAA3442B24DF8200706122 /* Main.storyboard */; };
 		DCCAA3482B24DF8500706122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCCAA3472B24DF8500706122 /* Assets.xcassets */; };
 		DCCAA34B2B24DF8500706122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCAA3492B24DF8500706122 /* LaunchScreen.storyboard */; };
+		DCCAA3592B24EBD100706122 /* Extension+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAA3582B24EBD100706122 /* Extension+Collection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DCCAA3472B24DF8500706122 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCCAA34A2B24DF8500706122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCCAA34C2B24DF8500706122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCCAA3582B24EBD100706122 /* Extension+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Collection.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,10 @@
 			children = (
 				DCCAA3522B24E61E00706122 /* App */,
 				DCCAA3552B24E65200706122 /* Assets */,
-				DCCAA3562B24E66300706122 /* Model */,
-				DCCAA3532B24E63000706122 /* Controllers */,
+				DCCAA3572B24EB8C00706122 /* Extensinos */,
+				DCCAA3562B24E66300706122 /* Models */,
 				DCCAA3542B24E64200706122 /* Views */,
+				DCCAA3532B24E63000706122 /* Controllers */,
 				DCCAA34C2B24DF8500706122 /* Info.plist */,
 			);
 			path = QRCodeHelper;
@@ -100,11 +103,19 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		DCCAA3562B24E66300706122 /* Model */ = {
+		DCCAA3562B24E66300706122 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DCCAA3572B24EB8C00706122 /* Extensinos */ = {
+			isa = PBXGroup;
+			children = (
+				DCCAA3582B24EBD100706122 /* Extension+Collection.swift */,
+			);
+			path = Extensinos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 			files = (
 				DCCAA3432B24DF8200706122 /* ViewController.swift in Sources */,
 				DCCAA33F2B24DF8200706122 /* AppDelegate.swift in Sources */,
+				DCCAA3592B24EBD100706122 /* Extension+Collection.swift in Sources */,
 				DCCAA3412B24DF8200706122 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
