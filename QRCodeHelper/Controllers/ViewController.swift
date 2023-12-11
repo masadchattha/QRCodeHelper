@@ -61,7 +61,7 @@ extension ViewController {
 extension ViewController {
 
     func generateQRCode(for text: String) -> UIImage? {
-        guard let data = text.data(using: .ascii), data.isNotEmpty else { return nil }
+        guard let data = text.data(using: .ascii) else { return nil }
         // Core Image Filter Reference: https://developer.apple.com/library/archive/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html
         guard let qrCIFilter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
         qrCIFilter.setValue(data, forKey: "inputMessage")
