@@ -20,4 +20,16 @@ struct PermissionManager {
             }
         }
     }
+
+    static func checkCameraPermission() async throws {
+        try await withCheckedThrowingContinuation { continuation in
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                if granted {
+                    continuation.resume()
+                } else {
+                    continuation.resume(throwing: PermissionError.notGranted)
+                }
+            }
+        }
+    }
 }

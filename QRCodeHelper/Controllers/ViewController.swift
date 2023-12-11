@@ -39,14 +39,14 @@ extension ViewController {
     }
 
     @IBAction func onScanQR(_ sender: UIButton) {
-        PermissionManager.checkCameraPermission { result in
-            switch result {
-            case .success:
+        Task {
+            do {
+                try await PermissionManager.checkCameraPermission()
                 let vc = QRScannerVC.instantiate()
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true)
-            case .failure:
-                self.showCameraPermissionAlert()
+            } catch {
+                showCameraPermissionAlert()
             }
         }
     }
