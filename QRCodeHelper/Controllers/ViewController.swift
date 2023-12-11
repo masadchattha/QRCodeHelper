@@ -37,6 +37,19 @@ extension ViewController {
         guard let qrCode = generateQRCode(for: text) else { fatalError() }
         qrImageView.image = qrCode
     }
+
+    @IBAction func onScanQR(_ sender: UIButton) {
+        Task {
+            do {
+                try await PermissionManager.checkCameraPermission()
+                let vc = QRScannerVC.instantiate()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            } catch {
+                showCameraPermissionAlert()
+            }
+        }
+    }
 }
 
 // MARK: - Selectors
@@ -48,7 +61,7 @@ extension ViewController {
 extension ViewController {
 
     func generateQRCode(for text: String) -> UIImage? {
-        guard let data = text.data(using: .ascii), data.isNotEmpty else { return nil }
+        guard let data = text.data(using: .ascii) else { return nil }
         // Core Image Filter Reference: https://developer.apple.com/library/archive/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html
         guard let qrCIFilter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
         qrCIFilter.setValue(data, forKey: "inputMessage")
@@ -59,5 +72,23 @@ extension ViewController {
     }
 }
 
-
+// MARK: - Scaning Halpers
+extension ViewController {
+    func showCameraPermissionAlert() {
+        let alert = UIAlertController(
+            title: "Camera Permission Required",
+            message: "Please enable camera access in Settings to scan QR codes.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Settings", style: .default) { _ in
+            if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(settingsURL)
+            }
+        })
+        
+        present(alert, animated: true, completion: nil)
+    }
+}
 
