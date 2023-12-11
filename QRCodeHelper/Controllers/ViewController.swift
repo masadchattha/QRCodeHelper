@@ -39,9 +39,16 @@ extension ViewController {
     }
 
     @IBAction func onScanQR(_ sender: UIButton) {
-        let vc = QRScannerVC.instantiate()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        PermissionManager.checkCameraPermission { result in
+            switch result {
+            case .success:
+                let vc = QRScannerVC.instantiate()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            case .failure:
+                self.showCameraPermissionAlert()
+            }
+        }
     }
 }
 
@@ -65,5 +72,23 @@ extension ViewController {
     }
 }
 
-
+// MARK: - Scaning Halpers
+extension ViewController {
+    func showCameraPermissionAlert() {
+        let alert = UIAlertController(
+            title: "Camera Permission Required",
+            message: "Please enable camera access in Settings to scan QR codes.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Settings", style: .default) { _ in
+            if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(settingsURL)
+            }
+        })
+        
+        present(alert, animated: true, completion: nil)
+    }
+}
 
