@@ -22,9 +22,13 @@ class QRScannerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupQRScanner()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Task { await setupQRScanner() }
+    }
 }
 
 // MARK: - Instantiable
@@ -45,35 +49,33 @@ extension QRScannerVC {
 
 // MARK: - Scaning QR Code
 extension QRScannerVC {
-
-    private func setupQRScanner() {
+    
+    private func setupQRScanner() async  {
         captureSession = AVCaptureSession()
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
-
+        
         do {
             let videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
-            if captureSession.canAddInput(videoInput) {
-                captureSession.addInput(videoInput)
-            } else { failed(); return }
-        } catch {
-            return
-        }
-
+            captureSession.addInput(videoInput)
+        } catch { return }
+        
         let metadataOutput = AVCaptureMetadataOutput()
-        if captureSession.canAddOutput(metadataOutput) {
-            captureSession.addOutput(metadataOutput)
-            metadataOutput.setMetadataObjectsDelegate(self, queue: .main)
-            metadataOutput.metadataObjectTypes = [.qr]
-        } else {
-            failed()
-            return
-        }
-
+        captureSession.addOutput(metadataOutput)
+        metadataOutput.setMetadataObjectsDelegate(self, queue: .main)
+        metadataOutput.metadataObjectTypes = [.qr]
+        
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = view.layer.bounds
         previewLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(previewLayer)
-        captureSession.startRunning()
+        view.layer.insertSublayer(previewLayer, at: 0)
+        await startCaptureSession()
+    }
+
+    func startCaptureSession() async {
+        let localCaptureSession = self.captureSession ?? AVCaptureSession()
+        DispatchQueue.global(qos: .background).async {
+            localCaptureSession.startRunning()
+        }
     }
 }
 
@@ -88,7 +90,6 @@ extension QRScannerVC: AVCaptureMetadataOutputObjectsDelegate {
         guard let stringValue = readableObject.stringValue else { return }
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         showQRCodeScannedAlert(stringValue)
-        dismiss(animated: true)
     }
 }
 
@@ -105,7 +106,7 @@ extension QRScannerVC {
     private func showQRCodeScannedAlert(_ code: String) {
         let alert = UIAlertController(title: "QR Code Scanned", message: code, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-            self.captureSession.startRunning()
+            Task { await self.startCaptureSession() }
         })
         present(alert, animated: true)
     }

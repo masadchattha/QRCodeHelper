@@ -37,6 +37,12 @@ extension ViewController {
         guard let qrCode = generateQRCode(for: text) else { fatalError() }
         qrImageView.image = qrCode
     }
+
+    @IBAction func onScanQR(_ sender: UIButton) {
+        let vc = QRScannerVC.instantiate()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 }
 
 // MARK: - Selectors
