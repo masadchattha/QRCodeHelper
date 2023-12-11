@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC6F636B2B25531000B2B4A5 /* QRScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F636A2B25531000B2B4A5 /* QRScannerVC.swift */; };
+		DC6F636D2B255E9200B2B4A5 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F636C2B255E9200B2B4A5 /* UIStoryboard+Extension.swift */; };
+		DC6F63702B255F6B00B2B4A5 /* Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F636F2B255F6B00B2B4A5 /* Instantiable.swift */; };
 		DCCAA33F2B24DF8200706122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAA33E2B24DF8200706122 /* AppDelegate.swift */; };
 		DCCAA3412B24DF8200706122 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAA3402B24DF8200706122 /* SceneDelegate.swift */; };
 		DCCAA3432B24DF8200706122 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAA3422B24DF8200706122 /* ViewController.swift */; };
 		DCCAA3462B24DF8200706122 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCAA3442B24DF8200706122 /* Main.storyboard */; };
 		DCCAA3482B24DF8500706122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCCAA3472B24DF8500706122 /* Assets.xcassets */; };
 		DCCAA34B2B24DF8500706122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCAA3492B24DF8500706122 /* LaunchScreen.storyboard */; };
-		DCCAA3592B24EBD100706122 /* Extension+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAA3582B24EBD100706122 /* Extension+Collection.swift */; };
+		DCCAA3592B24EBD100706122 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAA3582B24EBD100706122 /* Collection+Extension.swift */; };
 		DCCAA35C2B24F64400706122 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DCCAA35B2B24F64400706122 /* SwifterSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC6F636A2B25531000B2B4A5 /* QRScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerVC.swift; sourceTree = "<group>"; };
+		DC6F636C2B255E9200B2B4A5 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
+		DC6F636F2B255F6B00B2B4A5 /* Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiable.swift; sourceTree = "<group>"; };
 		DCCAA33B2B24DF8200706122 /* QRCodeHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCAA33E2B24DF8200706122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCCAA3402B24DF8200706122 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,7 +32,7 @@
 		DCCAA3472B24DF8500706122 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCCAA34A2B24DF8500706122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCCAA34C2B24DF8500706122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCCAA3582B24EBD100706122 /* Extension+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Collection.swift"; sourceTree = "<group>"; };
+		DCCAA3582B24EBD100706122 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC6F636E2B255EEE00B2B4A5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DC6F636F2B255F6B00B2B4A5 /* Instantiable.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		DCCAA3322B24DF8200706122 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +77,7 @@
 				DCCAA3522B24E61E00706122 /* App */,
 				DCCAA3552B24E65200706122 /* Assets */,
 				DCCAA3572B24EB8C00706122 /* Extensinos */,
+				DC6F636E2B255EEE00B2B4A5 /* Utilities */,
 				DCCAA3562B24E66300706122 /* Models */,
 				DCCAA3542B24E64200706122 /* Views */,
 				DCCAA3532B24E63000706122 /* Controllers */,
@@ -84,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				DCCAA3422B24DF8200706122 /* ViewController.swift */,
+				DC6F636A2B25531000B2B4A5 /* QRScannerVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -115,7 +131,8 @@
 		DCCAA3572B24EB8C00706122 /* Extensinos */ = {
 			isa = PBXGroup;
 			children = (
-				DCCAA3582B24EBD100706122 /* Extension+Collection.swift */,
+				DCCAA3582B24EBD100706122 /* Collection+Extension.swift */,
+				DC6F636C2B255E9200B2B4A5 /* UIStoryboard+Extension.swift */,
 			);
 			path = Extensinos;
 			sourceTree = "<group>";
@@ -199,8 +216,11 @@
 			files = (
 				DCCAA3432B24DF8200706122 /* ViewController.swift in Sources */,
 				DCCAA33F2B24DF8200706122 /* AppDelegate.swift in Sources */,
-				DCCAA3592B24EBD100706122 /* Extension+Collection.swift in Sources */,
+				DC6F636D2B255E9200B2B4A5 /* UIStoryboard+Extension.swift in Sources */,
+				DCCAA3592B24EBD100706122 /* Collection+Extension.swift in Sources */,
+				DC6F63702B255F6B00B2B4A5 /* Instantiable.swift in Sources */,
 				DCCAA3412B24DF8200706122 /* SceneDelegate.swift in Sources */,
+				DC6F636B2B25531000B2B4A5 /* QRScannerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
