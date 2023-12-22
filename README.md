@@ -202,7 +202,7 @@ extension ViewController {
   }
 }
 ```
-
+> [!Note]
 > Ensure to include the ‘Camera Usage Description’ permission in the Info.plist file
 
 ---
