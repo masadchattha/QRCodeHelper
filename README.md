@@ -203,7 +203,7 @@ extension ViewController {
 }
 ```
 > [!Note]
-> Ensure to include the ‘Camera Usage Description’ permission in the Info.plist file
+> Ensure to include the `Camera Usage Description` permission in the Info.plist file
 
 ---
 I hope this guide helps elevate your experience. If you’d like to connect and further discuss iOS development, please feel free to [visit my LinkedIn profile](https://www.linkedin.com/in/masadchattha/).
