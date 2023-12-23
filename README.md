@@ -210,6 +210,5 @@ I hope this guide helps elevate your experience. If you’d like to connect and 
 Feel free to leave any questions or comments below.
 Happy coding!
 
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/asadchattha)
+[!["Buy Me A Coffee"](https://cdn.buymeacoffee.com/buttons/v2/arial-orange.png)](https://www.buymeacoffee.com/asadchattha)
 
